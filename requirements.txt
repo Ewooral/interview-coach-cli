@@ -1,0 +1,14 @@
+sounddevice>=0.4.6
+openai-whisper>=20231117
+numpy>=1.24.0
+scipy>=1.11.0
+soundfile>=0.12.0
+rich>=13.7.0
+
+# LLM providers — install only the ones you use
+anthropic>=0.34.0
+openai>=1.40.0
+google-genai>=0.3.0
+
+# Cloud STT providers (openai covers Groq + OpenAI Whisper too)
+requests>=2.31.0    # Deepgram REST client

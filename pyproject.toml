@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interview-coach-cli"
+version = "0.3.0"
+description = "Voice-driven real-time interview coach: records audio, transcribes with Whisper, answers via Claude/GPT/DeepSeek/Gemini with meeting plans, briefing research, and screen capture."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Ewooral", email = "boahen.cos@gmail.com" }
+]
+keywords = [
+    "interview", "coach", "whisper", "claude", "voice", "cli",
+    "transcription", "langgraph", "meeting", "briefing", "research",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Office/Business",
+]
+requires-python = ">=3.10"
+
+# Core deps — anything the app hits at runtime with no way to lazy-load.
+dependencies = [
+    # Audio + local STT
+    "sounddevice>=0.4.6",
+    "openai-whisper>=20231117",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "soundfile>=0.12.0",
+    # UI + CLI
+    "rich>=13.7.0",
+    # LLM providers (only anthropic + openai required; others optional)
+    "anthropic>=0.34.0",
+    "openai>=1.40.0",
+    # Research + HTTP
+    "requests>=2.31.0",
+    # LangGraph coach
+    "langgraph>=0.4.0",
+    "langchain-core>=0.3.0",
+]
+
+# Opt-in extras
+[project.optional-dependencies]
+gemini = ["google-genai>=0.3.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "build>=1.0",
+    "twine>=4.0",
+]
+
+[project.scripts]
+interview-recorder = "main:main"
+interview-coach = "main:main"
+
+[project.urls]
+Homepage = "https://ewooral.com"
+Repository = "https://github.com/ewooral/interview-coach-cli"
+Issues = "https://github.com/ewooral/interview-coach-cli/issues"
+
+# Flat layout — all our .py files live at repo root and become top-level modules.
+[tool.setuptools]
+py-modules = [
+    "main",
+    "recorder",
+    "transcribers",
+    "transcriber",
+    "responder",
+    "providers",
+    "config",
+    "sessions",
+    "profile_store",
+    "templates",
+    "onboarding",
+    "meeting_plans",
+    "plan_wizard",
+    "research",
+    "screen_capture",
+    "coach_graph",
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.md", ".env.example"]
