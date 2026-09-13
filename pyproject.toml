@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "interview-coach-cli"
-version = "0.3.0"
+version = "0.3.1"
 description = "Voice-driven real-time interview coach: records audio, transcribes with Whisper, answers via Claude/GPT/DeepSeek/Gemini with meeting plans, briefing research, and screen capture."
 readme = "README.md"
 license = { text = "MIT" }

@@ -48,7 +48,7 @@ console = Console()
 
 
 APP_NAME = "Interview Coach"
-APP_VERSION = "0.3.0"
+APP_VERSION = "0.3.1"
 
 
 def parse_reply(reply: str) -> dict:
