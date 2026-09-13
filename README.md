@@ -1,5 +1,10 @@
 # Interview Coach CLI
 
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/interview-coach-cli)](https://pypi.org/project/interview-coach-cli/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/Ewooral?style=social)](https://github.com/sponsors/Ewooral)
+
 Voice-driven real-time coaching for any high-stakes conversation — interview, sales discovery, academic call, medical consult, whatever. Captures mic or system audio (Zoom / Teams / Meet), transcribes with Whisper (local, Groq, OpenAI, or Deepgram), and answers with your chosen LLM (Claude / GPT / DeepSeek / Gemini) in a structured `SAY THIS / ANALYSIS / WHY IT WORKS` format.
 
 Two-way memory. Multi-profile. Per-conversation meeting plans with agenda, prepared answers, and traps to avoid. Live web-research briefings on your counterparty. Screen capture with vision-LLM analysis for coding challenges and diagrams. LangGraph-based routing that picks a cheap or premium model per turn.
